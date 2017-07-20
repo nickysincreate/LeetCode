@@ -1,0 +1,13 @@
+class Solution(object):
+    def findWords(self, words):
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
+        output=[]
+        for a in [set('qwertyuiop'),set('asdfghjkl'),set('zxcvbnm')]:
+            for word in words:
+                if set(word.lower()) <= a:
+                    print word
+                    output.append(word)
+        return output
