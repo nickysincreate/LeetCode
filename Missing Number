@@ -1,0 +1,33 @@
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        # n=len(a)
+        # total=(n+1)*(n+2)/2
+        # for i in range(n):
+        #     total -= a[i]
+        # return total
+        res = 0
+        c = 0
+        for x in nums:
+            res = res ^ c ^ x
+            c += 1
+        return res ^ c
+
+        
+        
+        
+# #s = [1,2,3,4,5,6,8]
+# s=[0]
+# l=len(s)
+# print(l)
+# def check(a,n):
+#     total=(n+1)*(n+2)/2
+#     for i in range(n):
+#         total -= a[i]
+#     return total
+
+    
+# print(check(s,l))
