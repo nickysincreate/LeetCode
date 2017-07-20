@@ -1,0 +1,28 @@
+class Solution(object):
+    def firstUniqChar(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        if s=="":
+            return -1
+        a = collections.Counter(s)
+        tmp = 0
+        for i in range(len(s)):
+        # print (s[i])
+            if a[s[i]] == 1:
+                tmp = i
+                return i
+        if tmp == 0:
+            return -1
+            # elif a[s[i]] != 1:
+                # return -1
+            
+            
+        # for i in range(len(s)):
+        #     c = s[i]
+        #     if s.count(c)==1:
+        #         return i
+
+        # return -1
+        
