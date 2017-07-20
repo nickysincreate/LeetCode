@@ -1,0 +1,27 @@
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        dict={}
+        length=len(s)
+        for a in s:
+            if a not in dict:
+                dict[a]=1
+            else:
+                dict[a]=  dict[a]+1
+
+        # counter=0
+        # for k in dict:
+        #     if dict[k] == 1:
+        #         counter=counter+1
+        # return (length - (counter -1))
+        odds = 0
+        for k, v in dict.items():
+            odds += v & 1
+        return len(s) - odds + int(odds > 0)
+        # odds = 0
+        # for k, v in collections.Counter(s).iteritems():
+        #     odds += v & 1
+        # return len(s) - odds + int(odds > 0)
