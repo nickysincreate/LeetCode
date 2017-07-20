@@ -1,0 +1,17 @@
+class Solution(object):
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        print(object)
+        d = {'M':1000, 'D':500, 'C':100, 'L':50, 'X':10, 'V':5, 'I':1}
+        temp=0
+        for i in range(0,len(s)-1):
+            #print i
+            if d[s[i]] < d[s[i+1]]:
+                temp=temp-d[s[i]]
+            else:
+                temp=temp+d[s[i]]
+        return (temp + d[s[len(s)-1]])
+                    
