@@ -1,0 +1,12 @@
+class Solution(object):
+    def intersection(self, a, b):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        print(a)
+        print(b)
+        # b3 = [val for val in a if val in b]
+        # return b3
+        return (list(set(a) & set(b)))
