@@ -1,0 +1,19 @@
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def deleteNode(self, node):
+        """
+        :type node: ListNode
+        :rtype: void Do not return anything, modify node in-place instead.
+        """
+        if node.next:
+            node.val=node.next.val
+            node.next=node.next.next
+        else:
+            node=None
+            
+#idea in sol is to overwrite, if we have to remove 3, we overwrite 4 location data to 3 , and then simply delete 4th location by standard approache(http://yucoding.blogspot.com/2016/04/leetcode-questiondelete-node-in-linked.html)
