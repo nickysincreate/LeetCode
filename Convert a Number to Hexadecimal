@@ -1,0 +1,21 @@
+class Solution(object):
+    def toHex(self, n):
+        """
+        :type num: int
+        :rtype: str
+        """
+        answer=[]
+        dic={10:"a",11:"b",12:"c",13:"d",14:"e",15:"f"}
+        if n==0:
+            return "0"
+        if n<0:
+            n=n+ 2**32
+        while n>0:
+            dig=n%16
+            n=(n-dig)/16
+            if dig>9 and dig<16:
+                dig=dic[dig]
+            else:
+                dig=str(dig)
+            answer.append(dig)
+        return "".join(answer[::-1])
