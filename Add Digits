@@ -1,0 +1,19 @@
+class Solution(object):
+    def addDigits(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        # new=str(num)
+        # tmp=0
+        # #print(len(new))
+        # while len(new) >= 2:
+        #     tmp = 0
+        #     for i in new:
+        #         tmp = tmp+int(i)
+        #     new = str(tmp)
+        # return (int(new))
+        if num == 0 : 
+            return 0
+        else:
+            return (num - 1) % 9 + 1
